@@ -1,0 +1,51 @@
+﻿@model LUIS_EnrollStudent.Models.Query
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.TextBox("SearchString", "",
+               new { style = "width: 500px;" }) <input type="submit" value="Search" />
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.FirstName,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.LastName,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Class,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Class,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Period,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Period,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+</div>
+
